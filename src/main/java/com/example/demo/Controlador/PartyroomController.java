@@ -6,8 +6,8 @@ package com.example.demo.Controlador;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.Modelo.Cloud;
-import com.example.demo.Servicio.CloudService;
+import com.example.demo.Modelo.Partyroom;
+import com.example.demo.Servicio.PartyroomService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,25 +23,25 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author USUARIO
  */
 @RestController
-@RequestMapping("/api/Cloud")
+@RequestMapping("/api/Partyroom")
 
-public class CloudController {
+public class PartyroomController {
       @Autowired
-    private CloudService cloudService;
+    private PartyroomService partyroomService;
     
     @GetMapping("/all")
-    public List<Cloud> getAll(){
-        return cloudService.getAll();
+    public List<Partyroom> getAll(){
+        return partyroomService.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Cloud> getCloud(@PathVariable("id") int id){
-        return cloudService.getCloud(id);
+    public Optional<Partyroom> getPartyroom(@PathVariable("id") int id){
+        return partyroomService.getPartyroom(id);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cloud save (@RequestBody Cloud cloud){
-        return cloudService.save(cloud);
+    public Partyroom save (@RequestBody Partyroom partyroom){
+        return partyroomService.save(partyroom);
     }
 }

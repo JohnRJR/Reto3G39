@@ -5,11 +5,11 @@
 package com.example.demo.Repositorio;
 
 import org.springframework.stereotype.Repository;
-import com.example.demo.Modelo.Cloud;
+import com.example.demo.Modelo.Partyroom;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.example.demo.Interface.CloudInterface;
+import com.example.demo.Interface.PartyroomInterface;
 /**
  *
  * @author USUARIO
@@ -17,23 +17,23 @@ import com.example.demo.Interface.CloudInterface;
 
 @Repository
 
-public class CloudRepository {
+public class PartyroomRepository {
      @Autowired
-    private CloudInterface extencionesCrud;
+    private PartyroomInterface extencionesCrud;
     
-    public List<Cloud> getAll(){
-        return (List<Cloud>) extencionesCrud.findAll();
+    public List<Partyroom> getAll(){
+        return (List<Partyroom>) extencionesCrud.findAll();
     }
     
-    public Optional<Cloud> getCloud(int id){
+    public Optional<Partyroom> getPartyroom(int id){
         return extencionesCrud.findById(id);
     }
     
-    public Cloud save(Cloud cloud){
-        return extencionesCrud.save(cloud);
+    public Partyroom save(Partyroom partyroom){
+        return extencionesCrud.save(partyroom);
     }
 
-    public Optional<Cloud> getcloud(int id) {
+    public Optional<Partyroom> getpartyroom(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -27,9 +27,9 @@ public class Message {
      private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "cloudId")
+    @JoinColumn(name = "partyroomId")
     @JsonIgnoreProperties({"messages","reservations"})
-    private Cloud cloud;
+    private Partyroom partyroom;
      
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -52,12 +52,12 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public Cloud getCloud() {
-        return cloud;
+    public Partyroom getPartyroom() {
+        return partyroom;
     }
 
-    public void setCloud(Cloud cloud) {
-        this.cloud = cloud;
+    public void setPartyroom(Partyroom partyroom) {
+        this.partyroom = partyroom;
     }
 
     public Client getClient() {
