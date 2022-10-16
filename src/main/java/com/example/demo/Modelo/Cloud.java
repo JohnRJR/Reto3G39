@@ -21,8 +21,8 @@ import javax.persistence.Table;
  * @author USUARIO
  */
 @Entity
-@Table(name = "quadbike")
-public class Quadbike {
+@Table(name = "cloud")
+public class Cloud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -33,15 +33,15 @@ public class Quadbike {
     
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("quadbikes")
+    @JsonIgnoreProperties("clouds")
     private Category category;
     
-     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
-    @JsonIgnoreProperties({"quadbike","client"})
+     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cloud")
+    @JsonIgnoreProperties({"cloud","client"})
     private List<Message> messages;
      
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
-    @JsonIgnoreProperties({"quadbike","messages"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cloud")
+    @JsonIgnoreProperties({"cloud","messages"})
     private List<Reservation> reservations;
 
     public Integer getId() {

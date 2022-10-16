@@ -31,9 +31,9 @@ public class Reservation {
      private String status = "created";
      
     @ManyToOne
-    @JoinColumn(name = "quadbikeId")
+    @JoinColumn(name = "cloudId")
     @JsonIgnoreProperties("reservations")
-    private Quadbike quadbike;
+    private Cloud cloud;
     
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -74,12 +74,12 @@ public class Reservation {
         this.status = status;
     }
 
-    public Quadbike getQuadbike() {
-        return quadbike;
+    public Cloud getCloud() {
+        return cloud;
     }
 
-    public void setQuadbike(Quadbike quadbike) {
-        this.quadbike = quadbike;
+    public void setCloud(Cloud cloud) {
+        this.cloud = cloud;
     }
 
     public Client getClient() {

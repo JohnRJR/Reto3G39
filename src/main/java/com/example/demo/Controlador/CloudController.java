@@ -6,8 +6,8 @@ package com.example.demo.Controlador;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.Modelo.Quadbike;
-import com.example.demo.Servicio.QuadbikeService;
+import com.example.demo.Modelo.Cloud;
+import com.example.demo.Servicio.CloudService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,25 +23,25 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author USUARIO
  */
 @RestController
-@RequestMapping("/api/Quadbike")
+@RequestMapping("/api/Cloud")
 
-public class QuadbikeController {
+public class CloudController {
       @Autowired
-    private QuadbikeService quadbikeService;
+    private CloudService cloudService;
     
     @GetMapping("/all")
-    public List<Quadbike> getAll(){
-        return quadbikeService.getAll();
+    public List<Cloud> getAll(){
+        return cloudService.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Quadbike> getQuadbike(@PathVariable("id") int id){
-        return quadbikeService.getQuadbike(id);
+    public Optional<Cloud> getCloud(@PathVariable("id") int id){
+        return cloudService.getCloud(id);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Quadbike save (@RequestBody Quadbike quadbike){
-        return quadbikeService.save(quadbike);
+    public Cloud save (@RequestBody Cloud cloud){
+        return cloudService.save(cloud);
     }
 }
