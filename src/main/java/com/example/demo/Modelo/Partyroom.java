@@ -28,7 +28,7 @@ public class Partyroom {
     private Integer id;
     private String name;
     private String brand;
-    private Integer year;
+    private Integer capacity;
     private String description;
     
     @ManyToOne
@@ -68,12 +68,12 @@ public class Partyroom {
         this.brand = brand;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getCapacity() {
+        return capacity;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public String getDescription() {
