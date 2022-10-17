@@ -27,7 +27,7 @@ public class Partyroom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String brand;
+    private String owner;
     private Integer capacity;
     private String description;
     
@@ -60,12 +60,12 @@ public class Partyroom {
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public Integer getCapacity() {
